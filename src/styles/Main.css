@@ -8,11 +8,58 @@
   color: white;
   text-align: center;
   padding: 20px;
-  > img {
-    width: 30%;
-    border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+  min-height: 90vh;
+
+  >div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-name: text-slide;
+ animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    >h1{
+      font-size: 4em;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    >p{
+      font-size: 2em;
+    }
   }
-  >img:hover{
-    border: 5px solid white;
+
+}
+
+.profile{
+width: 30%;
+ animation-name: slide;
+ animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+    
+
+}
+
+@keyframes text-slide {
+  0%{
+    transform: translateX(200%);
   }
+  30%{
+    transform: translateX(0%);
+  }
+  
+}
+
+@keyframes slide {
+  0%{
+    transform: translateX(-100%);
+  }
+  30%{
+    transform: translateX(0%);
+  }
+  
 }

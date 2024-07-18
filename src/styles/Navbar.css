@@ -9,6 +9,8 @@
   color: white;
   font-size: 20px;
   outline: none;
+  justify-content: space-between;
+
   > ul {
     display: flex;
     padding: 10px;
@@ -27,4 +29,8 @@
     }
    
   }
+}
+
+.logo{
+  width: 50%;
 }
