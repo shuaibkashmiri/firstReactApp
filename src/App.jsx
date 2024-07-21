@@ -8,6 +8,7 @@ import Gallery from "./components/Gallery.jsx"
 import Nopage from "./components/Nopage.jsx"
 import{BrowserRouter, Routes,Route} from "react-router-dom"
 import News from "./components/News.jsx";
+import Signup from "./components/Signup.jsx";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/about" element= {<About/>} />
           <Route path="/Gallery" element= {<Gallery/>} />
           <Route path="/news" element= {<News/>} />
+          <Route path="/signup" element= {<Signup/>} />
 
 
  </Routes>
