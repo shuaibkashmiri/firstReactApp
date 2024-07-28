@@ -1,4 +1,4 @@
-import React from "react";
+
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,9 +9,15 @@ import Nopage from "./components/Nopage.jsx"
 import{BrowserRouter, Routes,Route} from "react-router-dom"
 import News from "./components/News.jsx";
 import Signup from "./components/Signup.jsx";
+import Login from "./components/Login.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+
+
 
 
 const App = () => {
+  
+
   return (
     <>
      <BrowserRouter>
@@ -24,6 +30,10 @@ const App = () => {
           <Route path="/Gallery" element= {<Gallery/>} />
           <Route path="/news" element= {<News/>} />
           <Route path="/signup" element= {<Signup/>} />
+          <Route path="/login" element= {<Login/>} />
+          <Route path="/dashboard" element= {<Dashboard/>} />
+
+
 
 
  </Routes>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import "../styles/Gallery.css"
+import "../styles/Gallery.scss"
 import Card from './sharedComponents/Cards'
 import { useEffect } from 'react'
 
 
 const Gallery = () => {
   const [photos,setPhotos]=useState([])
-  const [query,setquery]=useState('india');
+  const [query,setquery]=useState('Nature');
 const [loading ,setloading]=useState(false)
   const handleClick=()=>{
     setloading(!loading)

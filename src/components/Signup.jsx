@@ -1,39 +1,81 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-
+import { ToastContainer, toast } from "react-toastify";
+import "../styles/signup.scss"
+import {Link} from "react-router-dom"
 const Signup = () => {
     const [username, setUsername]=useState("")
-    const [email, setEmail]=useState("l")
+    const [email, setEmail]=useState("")
     const [password, setPassword]=useState("");
 
-    const formDataArr=new FormData();
-    formDataArr.append("username",username);
-    formDataArr.append("email",email);
-    formDataArr.append("password",password);
+    
+    const url='http://localhost:4000/user';
 
-    const url='http://localhost:4000/';
-
-    const handleSignUp=async()=>{
+      const handleSignup = async () => {
         try {
-            const data =await axios.post(`${url}signUp`,formDataArr)
-        console.log(data.msg)
+          // xml http post request
+          const res = await axios.post(`${url}/signup`, {
+            username,
+            email,
+            password,
+          });
+          toast.success(res.data.message);
         } catch (error) {
-            console.log('Something Wrong')
+          console.log(error.message);
+          toast.error(error.message)
         }
-    }
+      };
+    
 function handleClick(){
-    handleSignUp()
+    handleSignup()
 }
 
   return (
-    <div>
+    <>
+      <ToastContainer />
+
+<div className='signup-outer'>
+
+  <div className="signup">
+  <h1>Register With Us </h1>
+  <input
+
+ 
+            placeholder="Enter your username "
+            type="text"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+
+          <input
+            placeholder="Enter your Email "
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+
+          <input
+            placeholder="Enter your password "
+            type="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+
+        <button onClick={handleClick}> Register</button>
+        <span>Already a user <Link to="/login">click here to login</Link></span>
+  </div>
+
+
+</div>
        
-        <input type="text" placeholder='enter Username' onChange={(e)=>{setUsername(e.target.value)}}/>
-        <input type="email" placeholder='enter Email' onChange={(e)=>{setEmail(e.target.value)}}/>
-        <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
-       
-        <button onClick={handleClick}>Sign up</button>
-    </div>
+        
+    </>
   )
 }
 
