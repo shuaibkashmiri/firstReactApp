@@ -19,10 +19,15 @@ const Signup = () => {
             email,
             password,
           });
-          toast.success(res.data.message);
+          if(res.data.msg === "User Registered Sucessfully"){
+            toast.success(res.data.msg);
+          }else{
+            toast.error(res.data.msg)
+          }
+          
         } catch (error) {
           console.log(error.message);
-          toast.error(error.message)
+          toast.error(error.msg)
         }
       };
     
@@ -68,7 +73,7 @@ function handleClick(){
           />
 
         <button onClick={handleClick}> Register</button>
-        <span>Already a user <Link to="/login">click here to login</Link></span>
+        <span>Already a user <Link to="/login" className='link'>click here to login</Link></span>
   </div>
 
 

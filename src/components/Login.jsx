@@ -1,14 +1,15 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import {Link} from "react-router-dom"
+import {useNavigate}  from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
-import { verifyToken } from '../auth/Auth';
 import ("../styles/login.scss");
 
 
 const Login = () => {
     const [email , setEmail]=useState("")
     const [password , setPassword]=useState("")
+    const navigate = useNavigate()
 
     
     const url ="http://localhost:4000/user/login"
@@ -18,7 +19,9 @@ const Login = () => {
         try {
             const res =await axios.post(url,credentials)
         if(res.data.message==="user loggin success"){
-            toast.success(res.data.message);
+            toast.success("Logged In Successfully");
+            navigate("/dashboard")
+            
         }else{
             toast.error(res.data.message)
         }
@@ -34,7 +37,7 @@ const Login = () => {
 
     function clickHandler(){
         handleLogin();
-        console.log(verifyToken())
+        
     }
 
     
@@ -51,7 +54,7 @@ const Login = () => {
         />
         <button onClick={clickHandler}>Log In</button>
 
-        <Link to="/signup">Create New Account</Link>
+        <Link to="/signup" className='link'>Create New Account</Link>
 
     </div>
     </div>

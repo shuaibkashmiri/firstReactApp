@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Authorized from '../auth/Authorized'
+import axios from 'axios'
+import "../styles/dashboard.scss"
 
 const Dashboard = () => {
+
+  
+  Authorized()
+  const [name ,setName]=useState("")
+  const _id=localStorage.getItem("id")
+  const url="http://localhost:4000/user/userdetails/"
+
+
+  const getUserDetails =async(_id)=>{
+    const res = await axios.get(`${url}${_id}`)
+    setName(res.data.message.userdetails.username)
+
+  }
+
+
+  useEffect(()=>{
+    getUserDetails(_id)
+  },[_id])
+    
+
   return (
-    <div>
-    <h1>Welcome to Your Account</h1>
+    <div className='dashboard'>
+    <h1>Hello! {name} Welcome to Your Account Dashboard!</h1>
     </div>
   )
 }

@@ -4,8 +4,11 @@
 }
 
 .main {
-  background-color: #181818;
-  color: white;
+  background-color:#333;
+  background-image: url("../../public/assets/hero.svg");
+  background-size: cover;
+    min-height: 700px;
+  color:white;
   text-align: center;
   padding: 20px;
   display: flex;
@@ -34,6 +37,7 @@
 }
 
 .profile{
+  margin-top: 10%;
 width: 30%;
  animation-name: slide;
  animation-duration: 7s;

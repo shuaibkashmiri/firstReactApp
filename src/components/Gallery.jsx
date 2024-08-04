@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "../styles/Gallery.scss"
 import Card from './sharedComponents/Cards'
 import { useEffect } from 'react'
+import Home from './sharedComponents/Home'
+import profile from "../images/gallery-icon-2048x1997-3ifnwllu.png"
 
 
 const Gallery = () => {
@@ -25,23 +27,34 @@ const [loading ,setloading]=useState(false)
      console.log(error) 
     }
   }
+
+  useEffect(()=>{
+
+    document.title="Gallery"
+  })
 useEffect(()=>{
   getImages(query)
 },[loading])
 
   return (
-    <div className="services">
-    <h1> My Gallery</h1>
-    <input type="text" placeholder='enter search' value={query} onChange={(e)=>{setquery(e.target.value)}}/>
-    <button onClick={handleClick}>search</button>
+    <>
+    <Home heading={"Our Gallery"} profile={profile}/>
 
-<div className="cards">
-  {photos.map((el)=><Card id={el.id} src={el.src.medium} auth={el.photographer}/>)}
+    <div className="services">
+      
+      <h1> My Gallery</h1>
+      <input type="text" placeholder='enter search' value={query} onChange={(e)=>{setquery(e.target.value)}}/>
+      <button onClick={handleClick}>search</button>
   
-  
- 
-</div>
-</div>
+  <div className="cards">
+    {photos.map((el)=><Card id={el.id} src={el.src.medium} auth={el.photographer}/>)}
+    
+    
+   
+  </div>
+  </div>
+    </>
+   
 
 
        

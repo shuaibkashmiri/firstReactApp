@@ -20,10 +20,14 @@ const Navbar = () => {
         <li>
           <Link to="/about"> About</Link>
         </li>
-        <li>
-          <Link to="/signup"> Sign Up</Link>
-        </li>
+        
       </ul>
+      <div className="reg">
+        <button className="signup"><Link to="/signup"> Sign Up</Link></button>
+          
+        <button className="login"><Link to="/login"> Login</Link></button>
+        
+      </div>
     </div>
   );
 };
