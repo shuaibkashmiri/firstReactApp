@@ -5,7 +5,7 @@ import "../../styles/Main.scss";
 const Home = (props) => {
   return (
     <div className="main">
-      <img src={props.profile} alt="profile-pic" className="profile" />
+      <img src={props.profile} alt="" className="profile" />
       <div>
         {" "}
         <h1>{props.heading}</h1>
