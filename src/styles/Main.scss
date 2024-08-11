@@ -8,12 +8,13 @@
   background-image: url("../../public/assets/hero.svg");
   background-size: cover;
     min-height: 700px;
-  color:white;
+  color:aliceblue;
   text-align: center;
   padding: 20px;
   display: flex;
   justify-content: space-around;
   min-height: 90vh;
+  z-index: 1;
 
   >div{
     display: flex;

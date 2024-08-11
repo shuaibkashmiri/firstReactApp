@@ -11,7 +11,7 @@ import Signup from "./components/Signup.jsx";
 import Login from "./components/Login.jsx";
 import Loading from "./components/sharedComponents/Loading.jsx";
 import Index from "./components/Index.jsx";
-import Allposts from "./components/Allposts.jsx";
+import PersonalBlogs from "./components/PersonalBlogs.jsx";
 
 
 
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/signup" element= {<Signup/>} />
           <Route path="/login" element= {<Login/>} />
           <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard/></Suspense>} />
-          <Route path="/allposts" element= {<Suspense fallback={<Loading></Loading>}><Allposts/></Suspense>} />
+          <Route path="/blogs" element= {<Suspense fallback={<Loading></Loading>}><PersonalBlogs/></Suspense>} />
 
 
 
