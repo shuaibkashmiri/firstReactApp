@@ -12,12 +12,12 @@ const Login = () => {
     const navigate = useNavigate()
 
     
-    const url ="http://localhost:4000/user/login"
+    const url ="https://app-back-end-nm7b.onrender.com"
     const credentials={email,password}
 
     const handleLogin = async ()=>{
         try {
-            const res =await axios.post(url,credentials)
+            const res =await axios.post(`${url}/user/login`,credentials)
         if(res.data.message==="user loggin success"){
             toast.success("Logged In Successfully");
             navigate("/dashboard")

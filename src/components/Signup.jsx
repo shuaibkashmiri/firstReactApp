@@ -9,12 +9,12 @@ const Signup = () => {
     const [password, setPassword]=useState("");
 
     
-    const url='http://localhost:4000/user';
+    const url='https://app-back-end-nm7b.onrender.com';
 
       const handleSignup = async () => {
         try {
           // xml http post request
-          const res = await axios.post(`${url}/signup`, {
+          const res = await axios.post(`${url}/user/signup`, {
             username,
             email,
             password,

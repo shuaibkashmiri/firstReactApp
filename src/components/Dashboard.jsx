@@ -9,7 +9,7 @@ const Dashboard = () => {
   Authorized()
   const [name ,setName]=useState("")
   const _id=localStorage.getItem("id")
-  const url="http://localhost:4000/user/userdetails/"
+  const url="https://app-back-end-nm7b.onrender.com/user/userdetails/"
 
 
   const getUserDetails =async(_id)=>{
