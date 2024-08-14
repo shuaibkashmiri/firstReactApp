@@ -320,12 +320,15 @@
   width: 70%;
 }
 
-.menu{
-  display: none;
-}
 .display-none{
   display: none;
 }
+
+.menu{
+  display: none;
+}
+
+
 
 @media only screen and (max-width : 620px){
 .menu{
@@ -334,8 +337,38 @@
   height: 80%;
 }
 
+.close-btn{
+  position: relative;
+  left: 80%;
+}
+.drop-down{
+  width: 40vw;
+  background-color: rgb(56, 56, 56);
+  height: 100vh;
+  position: fixed;
+  padding-top: 40px;
+  padding-left: 10px;
+  margin-left: -4%;
+  margin-top: -4%;
+  >ul{
+    padding: 20px;
+    >li{
+      margin-top: 30px;
+      
+      >a{
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+
+      }
+    }
+  }
+}
+
+
+
 .navbar{
-  background: none;
+ background-size: 400%;
   padding: 20px;
   >ul{
     display: none;
@@ -361,7 +394,10 @@
 
 
 @media only screen and (max-width : 1000px){
- 
+
+  .menuData{
+    display: none;
+  }
   
   .navbar{
     display: flex;
@@ -384,5 +420,19 @@
   }
 
   }
+
+  @media only screen and (min-width : 1000px){
+    .menuData{
+      display: none;
+    }
+  }
+
+
+
+
+     
+
+
+  
 
 
