@@ -2,11 +2,17 @@ import React from "react";
 import "../styles/Navbar.scss";
 import {Link} from "react-router-dom"
 import logo from "../images/logo.png"
+import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Link to="/"><img src={logo} alt="LOGO" className="logo" /></Link>
+
+    <IoMdMenu className="menu" />
+    {/* logo */}
+      <Link to="/"><img src={logo} alt="LOGO" className="logo" /></Link>  
+      
+      {/* ul */}
       <ul>
         <li>
           <Link to="/"> Home</Link>
@@ -22,6 +28,8 @@ const Navbar = () => {
         </li>
         
       </ul>
+
+      {/* buttons */}
       <div className="reg">
         <button className="signup"><Link to="/signup"> Sign Up</Link></button>
           

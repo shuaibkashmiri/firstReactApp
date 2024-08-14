@@ -13,19 +13,15 @@ const PersonalBlogs = () => {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const baseUrl = "http://localhost:4000";
+      const baseUrl = "https://app-back-end-nm7b.onrender.com";
      
       const url = `${baseUrl}/post/getAll`;
       
       const res = await axios.get(url);
-    
-
-      if (res.data.success === true) {
         setPosts(res.data.posts);
+        
         toast.success(res.data.message);
-      } else {
-        toast.error(res.data.message);
-      }
+      
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
@@ -36,7 +32,7 @@ const PersonalBlogs = () => {
   };
 
   useEffect(() => {
-    console.log(posts)
+        
     fetchBlogs()
   }, []);
 
@@ -44,12 +40,14 @@ const PersonalBlogs = () => {
   return (
     <>
       <ToastContainer />
+      
       <Home
         heading={'Latest Blogs'}
         profile={Profile}
       />
         
       <div className="blogs">
+   
 
         {posts &&
           posts.map((post) => (
