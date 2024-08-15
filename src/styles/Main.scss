@@ -68,3 +68,54 @@ width: 30%;
   }
   
 }
+
+
+@media only screen and (max-width : 650px){
+ .main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+  >.profile{
+    margin-top: 22%;
+    width: 50%;
+ animation-name: slide;
+ animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+    
+
+}
+  }
+
+  @keyframes slide {
+    0%{
+      transform: translateX(-200%);
+    }
+    30%{
+      transform: translateX(0%);
+    }
+    
+  }
+ }
+  
+
+ 
+ @media only screen and (max-width : 950px){
+
+  .profile{
+    margin-top: 15%;
+    width: 50%;
+ animation-name: slide;
+ animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+    
+
+} 
+}
