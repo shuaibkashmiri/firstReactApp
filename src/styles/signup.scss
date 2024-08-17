@@ -49,3 +49,23 @@
 .link{
     color:aquamarine;
 }
+
+
+@media only screen and (max-width : 620px){
+
+
+    .signup-outer{
+
+
+        .signup{
+            margin-top: 150px;
+            width: 75%;
+
+            >input{
+                height: 5%;
+                width: 80%;
+            }
+        }
+    }
+    
+    }

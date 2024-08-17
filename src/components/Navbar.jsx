@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Navbar.scss";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import logo from "../images/logo.png"
 import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
+import axios from "axios";
 
-const Navbar = () => {
+const Navbar = (props) => {
 const [menuData, setMenuData]=useState(false);
 const [showSetting,setShowSettings]=useState(false);
-const [user,setUser]=useState(false)
+const [user,setUser]=useState("")
+const navigate = useNavigate()
 
 
+const handleLogout=()=>{
+  setShowSettings(false);
+  localStorage.removeItem("id");
+  localStorage.removeItem("token");
+  setUser("")
 
+  navigate("/")
+
+
+}
 const toggleSetting=()=>{
   setShowSettings(!showSetting);
 }
@@ -21,6 +32,27 @@ const toggleSetting=()=>{
 const toggleMenu =()=>{
   setMenuData(!menuData)
 }
+
+const id =localStorage.getItem("id")
+const getUserData=async()=>{
+  const id =localStorage.getItem("id")
+  const url= `https://app-back-end-nm7b.onrender.com/user/userdetails/${id}`;
+  
+  try {
+    const res =await axios.get(url);
+    setUser(res.data.message.userdetails.email)
+  } catch (error) {
+    console.log(error);
+  }
+}
+useEffect(()=>{
+  if(id){
+    getUserData()
+  }
+
+
+},[props.change,id])
+
 
   return (
     <>
@@ -81,11 +113,11 @@ const toggleMenu =()=>{
     </div>
     <div className={showSetting ? "settings" : "display-none"}>
  <ul>
-  <li>email</li>
-  <li>lg</li>
+  <li>{user}</li>
+  <li>Edit Profile</li>
   <hr />
-  <li>settings</li>
-  <li>edit profile</li>
+  <li>Settings</li>
+  <li onClick={handleLogout}>Log-Out</li>
  </ul>
 
 </div>  

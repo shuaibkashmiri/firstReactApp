@@ -46,7 +46,7 @@ function handleClick(){
   <input
 
  
-            placeholder="Enter your username "
+            placeholder="Enter Your Full Name "
             type="text"
             value={username}
             onChange={(e) => {
@@ -55,7 +55,7 @@ function handleClick(){
           />
 
           <input
-            placeholder="Enter your Email "
+            placeholder="Enter Your Email "
             type="email"
             value={email}
             onChange={(e) => {
@@ -64,7 +64,7 @@ function handleClick(){
           />
 
           <input
-            placeholder="Enter your password "
+            placeholder="Set Your Password"
             type="password"
             value={password}
             onChange={(e) => {

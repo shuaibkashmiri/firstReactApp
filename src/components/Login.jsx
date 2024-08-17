@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import ("../styles/login.scss");
 
 
-const Login = () => {
+const Login = (props) => {
     const [email , setEmail]=useState("")
     const [password , setPassword]=useState("")
     const navigate = useNavigate()
@@ -19,6 +19,7 @@ const Login = () => {
         try {
             const res =await axios.post(`${url}/user/login`,credentials)
         if(res.data.message==="user loggin success"){
+            props.setChange(!props.change)
             toast.success("Logged In Successfully");
             navigate("/dashboard")
             
@@ -48,8 +49,8 @@ const Login = () => {
     <div className='login'>
         
         <h1>Login to Your Account</h1>
-        <input type="email" placeholder='Enter Email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-        <input type="password" placeholder='Enter Password' value={password} 
+        <input type="email" placeholder='Enter Registered Email' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+        <input type="password" placeholder='Enter Your Password' value={password} 
         onChange={(e)=>{setPassword(e.target.value)}}
         />
         <button onClick={clickHandler}>Log In</button>

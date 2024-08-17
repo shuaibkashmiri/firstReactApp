@@ -8,20 +8,30 @@ const Dashboard = () => {
   
   Authorized()
   const [name ,setName]=useState("")
-  const _id=localStorage.getItem("id")
+  const id=localStorage.getItem("id")
   const url="https://app-back-end-nm7b.onrender.com/user/userdetails/"
 
 
-  const getUserDetails =async(_id)=>{
-    const res = await axios.get(`${url}${_id}`)
-    setName(res.data.message.userdetails.username)
+  const getUserDetails =async()=>{
+    try {
+     
+      const res = await axios.get(`${url}${id}`)
+      setName(res.data.message.userdetails.username)
+    } catch (error) {
+      console.log(error)
+    }
+   
 
   }
 
 
   useEffect(()=>{
-    getUserDetails(_id)
-  },[_id])
+    
+    
+    getUserDetails()
+    
+    
+  },[])
     
 
   return (

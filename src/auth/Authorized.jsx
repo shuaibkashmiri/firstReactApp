@@ -15,7 +15,7 @@ const Authorized =  () => {
       }
 
       if (token) {
-        const baseUrl = `http://localhost:4000/token/verify/${token}`;
+        const baseUrl = `https://app-back-end-nm7b.onrender.com/token/verify/${token}`;
 
         const res = await axios.get(baseUrl);
 

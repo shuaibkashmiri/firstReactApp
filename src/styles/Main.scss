@@ -40,34 +40,34 @@
 .profile{
   margin-top: 10%;
 width: 30%;
- animation-name: slide;
- animation-duration: 7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-play-state:running;
+//  animation-name: slide;
+//  animation-duration: 7s;
+//     animation-timing-function: linear;
+//     animation-iteration-count: infinite;
+//     animation-play-state:running;
     
 
 }
 
-@keyframes text-slide {
-  0%{
-    transform: translateX(200%);
-  }
-  30%{
-    transform: translateX(0%);
-  }
+// @keyframes text-slide {
+//   0%{
+//     transform: translateX(200%);
+//   }
+//   30%{
+//     transform: translateX(0%);
+//   }
   
-}
+// }
 
-@keyframes slide {
-  0%{
-    transform: translateX(-100%);
-  }
-  30%{
-    transform: translateX(0%);
-  }
+// @keyframes slide {
+//   0%{
+//     transform: translateX(-100%);
+//   }
+//   30%{
+//     transform: translateX(0%);
+//   }
   
-}
+// }
 
 
 @media only screen and (max-width : 650px){
@@ -92,16 +92,16 @@ width: 30%;
 }
   }
 
-  @keyframes slide {
-    0%{
-      transform: translateX(-200%);
-    }
-    30%{
-      transform: translateX(0%);
-    }
+  // @keyframes slide {
+  //   0%{
+  //     transform: translateX(-200%);
+  //   }
+  //   30%{
+  //     transform: translateX(0%);
+  //   }
     
   }
- }
+ 
   
 
  
@@ -110,11 +110,11 @@ width: 30%;
   .profile{
     margin-top: 15%;
     width: 50%;
- animation-name: slide;
- animation-duration: 7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-play-state:running;
+//  animation-name: slide;
+//  animation-duration: 7s;
+//     animation-timing-function: linear;
+//     animation-iteration-count: infinite;
+//     animation-play-state:running;
     
 
 } 

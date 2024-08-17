@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
@@ -23,16 +23,18 @@ async function delay(promise){
   await new Promise((resolve)=>{
     setTimeout(resolve,2000)
   })
+
+  
   return promise
 }
 
 const App = () => {
   
-
+  const [change, setChange] = useState(false);
   return (
     <>
      <BrowserRouter>
-      <Navbar />
+      <Navbar change={change} setChange={setChange} />
      <Routes>
      <Route path="*" element= {<Nopage/>} />    
           <Route path="/" element= {<Index/>} />
@@ -41,8 +43,8 @@ const App = () => {
           <Route path="/Gallery" element= {<Gallery/>} />
           <Route path="/news" element= {<News/>} />
           <Route path="/signup" element= {<Signup/>} />
-          <Route path="/login" element= {<Login/>} />
-          <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard/></Suspense>} />
+          <Route path="/login" element= {<Login change={change} setChange={setChange}/> } />
+          <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard change={change} setChange={setChange}/></Suspense>} />
           <Route path="/blogs" element= {<Suspense fallback={<Loading></Loading>}><PersonalBlogs/></Suspense>} />
           <Route path="/post" element={<WriteBlogs/>}/>
 
