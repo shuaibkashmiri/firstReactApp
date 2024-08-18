@@ -5,6 +5,7 @@ import logo from "../images/logo.png"
 import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
+import { IoIosArrowDropdown } from "react-icons/io";
 import axios from "axios";
 
 const Navbar = (props) => {
@@ -79,7 +80,7 @@ useEffect(()=>{
           </div>
         
     {/* logo */}
-      <Link to="/"><img src={logo} alt="LOGO" className="logo" /></Link>  
+      <Link to="/" className="homelink"><img src={logo} alt="LOGO" className="logo" /></Link>  
       
       {/* ul */}
       <ul>
@@ -97,6 +98,16 @@ useEffect(()=>{
         </li>
         
       </ul>
+
+      <div  className={user?"userlogo":"display-none"}>
+      <div className="userprofile">
+        <img src="" alt="img" />
+      </div>
+      <p>{user}</p>
+          <div>
+            <IoIosArrowDropdown/>
+          </div>
+      </div>
 
       {/* buttons */}
       <div className="reg">

@@ -4,6 +4,7 @@
 }
 
 .navbar {
+  
   padding-top: 10px;
   display: flex;
   background-color: #333;
@@ -21,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 15%;
+    margin-bottom: 20px;
     padding-right: 10px;
     
    
@@ -298,13 +299,15 @@
  
 
   > ul {
+    width: 800px;
     display: flex;
-    margin-top: 2%;
-    margin-right: 25%;
+    margin-top: 30px;
+    margin-right: 250px;
     > li {
       padding: 10px 10px;
       width: 100px;
       list-style: none;
+      text-align: center;
       > a {
         text-decoration: none;
         color: white;
@@ -318,13 +321,23 @@
   }
 }
 
+.homelink{
+  width: 250px;
+  margin-left: 30px;
+}
+
 .logo{
-  width: 25%;
-  margin-left: 4%;
+  width: 90%;
+  
+
 }
 
 .display-none{
   display: none;
+}
+
+.display-hidden{
+  display: hidden;
 }
 
 .menu{
@@ -334,6 +347,9 @@
 
 
 @media only screen and (max-width : 620px){
+  .userlogo{
+    display: none;
+  }
 .menu{
   display: block;
   width: 13%;
@@ -377,12 +393,13 @@
 
 .navbar{
   width: 100%;
- background-size: 400%;
- background: none;
+ background-size: 300%;
+
  display: flex;
  justify-content: space-around;
 
   padding: 20px;
+  z-index: 2;
   >ul{
     display: none;
 
@@ -610,6 +627,30 @@
     }
     .dots{
       display: none;
+    }
+
+    .userlogo{
+      display: flex;
+      width: 400px;
+      justify-content:space-evenly;
+      align-items: center;
+      font-size: 14px;
+      margin-right: 40px;
+   
+  
+    }
+
+    .reg{
+      margin-right: 10px;
+      width: 250px;
+
+    }
+
+    .userprofile{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid white;
     }
   }
 
