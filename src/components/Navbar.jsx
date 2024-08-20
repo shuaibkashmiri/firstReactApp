@@ -11,12 +11,14 @@ import axios from "axios";
 const Navbar = (props) => {
 const [menuData, setMenuData]=useState(false);
 const [showSetting,setShowSettings]=useState(false);
+const [dropDown, setDropDown]=useState(false)
 const [user,setUser]=useState("")
 const navigate = useNavigate()
 
 
 const handleLogout=()=>{
   setShowSettings(false);
+  setDropDown(false)
   localStorage.removeItem("id");
   localStorage.removeItem("token");
   setUser("")
@@ -24,6 +26,10 @@ const handleLogout=()=>{
   navigate("/")
 
 
+}
+
+function toggleDropDown(){
+  setDropDown(!dropDown)
 }
 const toggleSetting=()=>{
   setShowSettings(!showSetting);
@@ -35,10 +41,8 @@ const toggleMenu =()=>{
 }
 
 const id =localStorage.getItem("id")
+const url= `https://app-back-end-nm7b.onrender.com/user/userdetails/${id}`;
 const getUserData=async()=>{
-  const id =localStorage.getItem("id")
-  const url= `https://app-back-end-nm7b.onrender.com/user/userdetails/${id}`;
-  
   try {
     const res =await axios.get(url);
     setUser(res.data.message.userdetails.email)
@@ -47,11 +51,10 @@ const getUserData=async()=>{
   }
 }
 useEffect(()=>{
-  if(id){
+
     getUserData()
-  }
-
-
+  
+   
 },[props.change,id])
 
 
@@ -99,23 +102,28 @@ useEffect(()=>{
         
       </ul>
 
-      <div  className={user?"userlogo":"display-none"}>
+      <div>
+        {user?<div  className="userlogo">
       <div className="userprofile">
         <img src="" alt="img" />
       </div>
       <p>{user}</p>
-          <div>
-            <IoIosArrowDropdown/>
-          </div>
-      </div>
 
-      {/* buttons */}
-      <div className="reg">
+       <IoIosArrowDropdown onClick={toggleDropDown}/>
+      
+          
+      </div>:<div className="reg">
         <button className="signup"><Link to="/signup"> Sign Up</Link></button>
           
         <button className="login"><Link to="/login"> Login</Link></button>
         
+      </div>}
       </div>
+
+     
+
+      {/* buttons */}
+      
       <div>
 {user ? <BsThreeDotsVertical className="dots" onClick={toggleSetting}/>:<Link  to={"/login"} className="login-menu">Login</Link>}
 
@@ -132,6 +140,15 @@ useEffect(()=>{
  </ul>
 
 </div>  
+
+<div className={dropDown?"dropdownmenu":"display-none"}>
+   <ul>
+    <li>Setting</li>
+    <li>Edit Profile</li>
+    <hr />
+    <li onClick={handleLogout}>Log-Out</li>
+   </ul>
+       </div>
     </>    
   );
 };

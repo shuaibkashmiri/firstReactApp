@@ -31,6 +31,7 @@ async function delay(promise){
 const App = () => {
   
   const [change, setChange] = useState(false);
+  const [loading,setLoading]=useState(false);
   return (
     <>
      <BrowserRouter>
@@ -44,7 +45,7 @@ const App = () => {
           <Route path="/news" element= {<News/>} />
           <Route path="/signup" element= {<Signup/>} />
           <Route path="/login" element= {<Login change={change} setChange={setChange}/> } />
-          <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard change={change} setChange={setChange}/></Suspense>} />
+          <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard loading={Loading} setLoading={setLoading}/></Suspense>} />
           <Route path="/blogs" element= {<Suspense fallback={<Loading></Loading>}><PersonalBlogs/></Suspense>} />
           <Route path="/post" element={<WriteBlogs/>}/>
 

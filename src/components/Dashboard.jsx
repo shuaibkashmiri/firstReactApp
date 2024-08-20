@@ -3,20 +3,23 @@ import Authorized from '../auth/Authorized'
 import axios from 'axios'
 import "../styles/dashboard.scss"
 
-const Dashboard = () => {
 
+const Dashboard = (props) => {
   
   Authorized()
+  
+  
   const [name ,setName]=useState("")
-  const id=localStorage.getItem("id")
+  let id = localStorage.getItem("id");
   const url="https://app-back-end-nm7b.onrender.com/user/userdetails/"
-
 
   const getUserDetails =async()=>{
     try {
+      const res = await axios.get(`${url}${id}`);
+      
      
-      const res = await axios.get(`${url}${id}`)
       setName(res.data.message.userdetails.username)
+     
     } catch (error) {
       console.log(error)
     }
@@ -25,18 +28,18 @@ const Dashboard = () => {
   }
 
 
+
   useEffect(()=>{
-    
-    
+  
     getUserDetails()
-    
-    
-  },[])
+  },[props.change,])
     
 
   return (
+
     <div className='dashboard'>
-    <h1>Hello! {name} Welcome to Your Account Dashboard!</h1>
+      {name? <h1>Hello! {name} Welcome to Your Account Dashboard!</h1>:""}
+   
     </div>
   )
 }

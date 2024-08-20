@@ -19,15 +19,18 @@ const Login = (props) => {
         try {
             const res =await axios.post(`${url}/user/login`,credentials)
         if(res.data.message==="user loggin success"){
-            props.setChange(!props.change)
             toast.success("Logged In Successfully");
+            const {token}=res.data;
+            localStorage.setItem("token",token);
+            props.setChange(!props.change)
             navigate("/dashboard")
+            
+           
             
         }else{
             toast.error(res.data.message)
         }
-        const {token}=res.data;
-        localStorage.setItem("token",token);
+      
         
             
         } catch (error) {
