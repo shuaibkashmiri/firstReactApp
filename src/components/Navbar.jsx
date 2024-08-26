@@ -6,7 +6,8 @@ import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowDropdown } from "react-icons/io";
-import axios from "axios";
+import api from "../utils/AxiosInstance";
+import Cookies from "js-cookie";
 
 const Navbar = (props) => {
 const [menuData, setMenuData]=useState(false);
@@ -19,10 +20,8 @@ const navigate = useNavigate()
 const handleLogout=()=>{
   setShowSettings(false);
   setDropDown(false)
-  localStorage.removeItem("id");
-  localStorage.removeItem("token");
-  setUser("")
-
+  Cookies.remove("token")
+  setUser("");
   navigate("/")
 
 
@@ -40,11 +39,9 @@ const toggleMenu =()=>{
   setMenuData(!menuData)
 }
 
-const id =localStorage.getItem("id")
-const url= `https://app-back-end-nm7b.onrender.com/user/userdetails/${id}`;
 const getUserData=async()=>{
   try {
-    const res =await axios.get(url);
+    const res =await api.get("/user/userdetails");
     setUser(res.data.message.userdetails.email)
   } catch (error) {
     console.log(error);
@@ -55,7 +52,7 @@ useEffect(()=>{
     getUserData()
   
    
-},[props.change,id])
+},[props.change])
 
 
   return (

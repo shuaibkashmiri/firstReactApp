@@ -3,18 +3,18 @@ import React, { useState } from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "../styles/signup.scss"
 import {Link} from "react-router-dom"
+import api from '../utils/AxiosInstance';
 const Signup = () => {
     const [username, setUsername]=useState("")
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("");
 
     
-    const url='https://app-back-end-nm7b.onrender.com';
 
       const handleSignup = async () => {
         try {
           // xml http post request
-          const res = await axios.post(`${url}/user/signup`, {
+          const res = await api.post(`/user/signup`, {
             username,
             email,
             password,

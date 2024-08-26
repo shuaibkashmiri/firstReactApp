@@ -1,37 +1,23 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axios from "axios";
+import api from "../utils/AxiosInstance";
 
 const Authorized =  () => {
   const navigate = useNavigate();
 
   const checkAuth = async () => {
     try {
-      const token = localStorage.getItem("token");
-
-      if (!token) {
-        return navigate("/login");
-      }
-
-      if (token) {
-        const baseUrl = `https://app-back-end-nm7b.onrender.com/token/verify/${token}`;
-
-        const res = await axios.get(baseUrl);
-
+        const res = await api.get("/token/verify");
         if (res.data.msg === "not verified") {
           return navigate("/login");
         } 
         else if (res.data.msg === "Token verified"){
-          const id = res.data.decode._id
-
-          localStorage.setItem("id" , id )
+          return true;
         }
-
-     
-      }
     } catch (error) {
       console.log(error);
+      navigate("/login")
       toast.error("Something Went Wrong!");
     }
   };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Authorized from '../auth/Authorized'
-import axios from 'axios'
 import "../styles/dashboard.scss"
+import api from '../utils/AxiosInstance'
 
 
 const Dashboard = (props) => {
@@ -10,12 +10,10 @@ const Dashboard = (props) => {
   
   
   const [name ,setName]=useState("")
-  let id = localStorage.getItem("id");
-  const url="https://app-back-end-nm7b.onrender.com/user/userdetails/"
 
   const getUserDetails =async()=>{
     try {
-      const res = await axios.get(`${url}${id}`);
+      const res = await api.get("/user/userdetails");
       
      
       setName(res.data.message.userdetails.username)

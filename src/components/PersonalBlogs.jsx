@@ -4,6 +4,7 @@ import "../styles/blogs.scss";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import Profile from "../images/blog.png";
+import api from "../utils/AxiosInstance";
 
 const PersonalBlogs = () => {
   const [posts, setPosts] = useState([]);
@@ -13,11 +14,9 @@ const PersonalBlogs = () => {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const baseUrl = "https://app-back-end-nm7b.onrender.com";
      
-      const url = `${baseUrl}/post/getAll`;
       
-      const res = await axios.get(url);
+      const res = await api.get("/user/getAll");
         setPosts(res.data.posts);
         
         toast.success(res.data.message);

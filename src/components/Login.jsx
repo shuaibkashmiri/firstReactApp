@@ -1,8 +1,8 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 import {useNavigate}  from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+import api from '../utils/AxiosInstance'
 import ("../styles/login.scss");
 
 
@@ -11,22 +11,15 @@ const Login = (props) => {
     const [password , setPassword]=useState("")
     const navigate = useNavigate()
 
-    
-    const url ="https://app-back-end-nm7b.onrender.com"
-    const credentials={email,password}
+    const formData={email,password}
 
     const handleLogin = async ()=>{
         try {
-            const res =await axios.post(`${url}/user/login`,credentials)
+            const res =await api.post(`/user/login`,formData)
         if(res.data.message==="user loggin success"){
             toast.success("Logged In Successfully");
-            const {token}=res.data;
-            localStorage.setItem("token",token);
             props.setChange(!props.change)
             navigate("/dashboard")
-            
-           
-            
         }else{
             toast.error(res.data.message)
         }
