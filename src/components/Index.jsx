@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react'
-import Home from './sharedComponents/Home'
-import profile from "../images/home_profile.png"
+import '../styles/Main.scss';
 
 const Index = () => {
   useEffect(()=>{
     document.title="Home"
   })
   return (
-   <>
-   <Home heading={"Shoaib Mushtaq Bhat"} para={"Web Developer"} profile={profile}/>
-   </>
+    <div className="hero-container">
+      <div className="overlay"></div>
+      <div className="hero-content">
+        <h1>Adventure Awaits!</h1>
+        <p>Discover the perfect gear for your next adventure.</p>
+        <a href="#shop" className="hero-btn">Shop Now</a>
+      </div>
+    </div>
   )
 }
 
