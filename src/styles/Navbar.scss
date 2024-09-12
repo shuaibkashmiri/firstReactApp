@@ -7,7 +7,7 @@
   
   padding-top: 10px;
   display: flex;
-  background: rgba(51, 170, 51, 0);
+  background-color: rgb(32, 32, 32);
 
   color: white;
   font-size: 20px;
@@ -375,6 +375,9 @@
       display: none;
     }
 
+    .homelink{
+      width: 180px;
+    }
     .userlogo{
       display: flex;
       width: 300px;

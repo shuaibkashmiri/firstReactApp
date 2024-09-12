@@ -12,7 +12,8 @@ import Login from "./components/Login.jsx";
 import Loading from "./components/sharedComponents/Loading.jsx";
 import Index from "./components/Index.jsx";
 import PersonalBlogs from "./components/PersonalBlogs.jsx";
-import WriteBlogs from "./components/WriteBlogs.jsx";
+import AddProducts from "./components/adminComponents/AddProducts.jsx";
+import Products from "./components/Products.jsx";
 
 
 
@@ -47,7 +48,10 @@ const App = () => {
           <Route path="/login" element= {<Login change={change} setChange={setChange}/> } />
           <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard loading={Loading} setLoading={setLoading}/></Suspense>} />
           <Route path="/blogs" element= {<Suspense fallback={<Loading></Loading>}><PersonalBlogs/></Suspense>} />
-          <Route path="/post" element={<WriteBlogs/>}/>
+          <Route path="/addproducts" element={<AddProducts/>}/>
+          <Route path="/products" element={<Products/>}/>
+
+
 
  </Routes>
       

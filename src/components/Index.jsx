@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import '../styles/Main.scss';
+import Products from './Products';
 
 const Index = () => {
   useEffect(()=>{
     document.title="Home"
   })
   return (
+    <>
     <div className="hero-container">
       <div className="overlay"></div>
       <div className="hero-content">
@@ -14,6 +16,8 @@ const Index = () => {
         <a href="#shop" className="hero-btn">Shop Now</a>
       </div>
     </div>
+<Products/>
+</>
   )
 }
 

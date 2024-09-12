@@ -16,8 +16,9 @@ const PersonalBlogs = () => {
       setLoading(true);
      
       
-      const res = await api.get("/user/getAll");
-        setPosts(res.data.posts);
+      const res = await api.get("/products/getAll");
+        console.log(res.data.newProducts)
+        setPosts(res.data.newProducts);
         
         toast.success(res.data.message);
       
@@ -50,12 +51,15 @@ const PersonalBlogs = () => {
 
         {posts &&
           posts.map((post) => (
-            <div className="blog">
-              <h1>{post.title}</h1>
-              <img src={post.imageUrl} alt="no-image" />
-              <p>{post.author}</p>
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            </div>
+            <div className="product-card">
+      <img src={post.imageUrl} alt="img" className="product-image" />
+      <div className="product-info">
+        <h2 className="product-name">{post.title}</h2>
+        <p className="product-description">{post.description}</p>
+        <p className="product-price">{post.price}</p>
+        <button className="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
           ))}
       </div>
     </>
