@@ -43,6 +43,7 @@ const Products = () => {
    </div>
    <div className='product-info'>
     <p>{products.title}</p>
+    <p className='price'>₹ {products.price}</p>
 
     <button>Add To Cart</button>
    </div>
