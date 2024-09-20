@@ -7,9 +7,10 @@
   
   padding-top: 10px;
   display: flex;
-  background-color: rgb(32, 32, 32);
+  background-color:  #31473A;
 
-  color: white;
+
+  color: #EDF4F2;
   font-size: 20px;
   outline: none;
   justify-content: space-between;
@@ -40,6 +41,7 @@
     display: flex;
     margin-top: 30px;
     margin-right: 250px;
+   
     > li {
       padding: 10px 10px;
       width: 100px;
@@ -47,11 +49,11 @@
       text-align: center;
       > a {
         text-decoration: none;
-        color: white;
+        color: #EDF4F2;
 
       }
       >a:hover{
-       
+        
       }
     }
    
@@ -102,7 +104,7 @@
 }
 .drop-down{
   width: 40vw;
-  background-color: rgb(56, 56, 56);
+  background-color: #31473A;
   height: 100vh;
   position: fixed;
   padding-top: 40px;
@@ -162,13 +164,13 @@
   position: relative;
   top: 170px;
   left: 53%;
-  background-color:#212121;
+  background-color:#31473A;
   margin-top: -20%;
   z-index: 2;
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
-  color: white;
+  color:  #fff;
   height: 150px;
   font-size: 16px;
   position: fixed;
@@ -319,7 +321,7 @@
     text-decoration: none;
     font-family: sans-serif;
     font-weight: 600;
-    color: #333;
+    color: #31473A;
   }
 
   

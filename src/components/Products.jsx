@@ -9,7 +9,7 @@ const Products = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const fetchNewArrivals = async () => {
+  const fetchProducts = async () => {
     try {
       setLoading(true);
      
@@ -31,7 +31,7 @@ const Products = () => {
 
   useEffect(() => {
         
-    fetchNewArrivals()
+    fetchProducts()
   }, []);
   return (
     <>
@@ -43,6 +43,8 @@ const Products = () => {
    </div>
    <div className='product-info'>
     <p>{products.title}</p>
+    <p>{products.catagory}</p>
+    <p>{products.gender}</p>
     <p className='price'>₹ {products.price}</p>
 
     <button>Add To Cart</button>

@@ -51,7 +51,7 @@ const Login = (props) => {
         />
         <button onClick={clickHandler}>Log In</button>
 
-        <Link to="/signup" className='link'>Create New Account</Link>
+        <span><Link to="/signup" className='link'>Create New Account</Link></span>
 
     </div>
     </div>

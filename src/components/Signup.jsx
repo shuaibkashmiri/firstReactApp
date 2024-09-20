@@ -37,9 +37,10 @@ function handleClick(){
 
   return (
     <>
-      <ToastContainer />
+      
 
 <div className='signup-outer'>
+<ToastContainer />
 
   <div className="signup">
   <h1>Register With Us </h1>

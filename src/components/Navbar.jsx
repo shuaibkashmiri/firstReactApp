@@ -6,6 +6,9 @@ import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowDropdown } from "react-icons/io";
+import { AiOutlineHome } from "react-icons/ai";
+import { LiaFemaleSolid, LiaMaleSolid } from "react-icons/lia";
+import { PiGridFour } from "react-icons/pi";
 import api from "../utils/AxiosInstance";
 import Cookies from "js-cookie";
 
@@ -68,14 +71,12 @@ useEffect(()=>{
                 <Link to="/"> Home</Link>
               </li>
               <li>
-                <Link to="/contact"> Contact</Link>
+                <Link to="/contact"> Men</Link>
               </li>
               <li>
-                <Link to="/about"> About</Link>
+                <Link to="/about"> Women</Link>
               </li>
-              <li>
-                <Link to="/blogs"> Blogs</Link>
-              </li>
+    
             </ul>
           </div>
         
@@ -85,16 +86,13 @@ useEffect(()=>{
       {/* ul */}
       <ul>
         <li>
-          <Link to="/"> Home</Link>
+          <Link to="/"> <AiOutlineHome/> Home</Link>
         </li>
         <li>
-          <Link to="/contact"> Contact</Link>
+          <Link to="/contact"><LiaMaleSolid/> Men</Link>
         </li>
         <li>
-          <Link to="/blogs"> Blogs</Link>
-        </li>
-        <li>
-          <Link to="/about"> About</Link>
+          <Link to="/blogs"><LiaFemaleSolid /> Women</Link>
         </li>
         
       </ul>
