@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "../styles/products.scss"
 import { toast } from 'react-toastify';
-import api from '../utils/AxiosInstance';
+import api from '../../utils/AxiosInstance';
 
 const Products = () => {
 

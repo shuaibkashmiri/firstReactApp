@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Authorized from '../auth/Authorized'
+import Authorized from '../../auth/Authorized'
 import "../styles/dashboard.scss"
-import api from '../utils/AxiosInstance'
+import api from '../../utils/AxiosInstance'
 
 
 const Dashboard = (props) => {

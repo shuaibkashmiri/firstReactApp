@@ -1,23 +1,19 @@
-import React, { Suspense, useState } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Gallery from "./components/Gallery.jsx"
-import Nopage from "./components/Nopage.jsx"
+import React, { lazy ,Suspense, useState } from "react";
 import{BrowserRouter, Routes,Route} from "react-router-dom"
-import News from "./components/News.jsx";
-import Signup from "./components/Signup.jsx";
-import Login from "./components/Login.jsx";
+import Index from "./components/publicComponents/Index.jsx";
+import Navbar from "./components/sharedComponents/Navbar.jsx";
+import Footer from "./components/sharedComponents/Footer.jsx";
+import Products from "./components/publicComponents/Products.jsx";
 import Loading from "./components/sharedComponents/Loading.jsx";
-import Index from "./components/Index.jsx";
-import PersonalBlogs from "./components/PersonalBlogs.jsx";
-import AddProducts from "./components/adminComponents/AddProducts.jsx";
-import Products from "./components/Products.jsx";
+import Login from "./components/publicComponents/Login.jsx";
+import Signup from "./components/publicComponents/Signup.jsx";
 
 
 
-const Dashboard =React.lazy(()=>delay(import("./components/Dashboard.jsx")))
+
+const Dashboard =lazy(()=>delay(import("./components/userComponents/Dashboard.jsx")))
+const Nopage=lazy(()=>import("./components/adminComponents/Nopage.jsx"))
+const AddProducts =lazy(()=>import("./components/adminComponents/AddProducts.jsx"))
 
 
 async function delay(promise){
@@ -40,15 +36,10 @@ const App = () => {
      <Routes>
      <Route path="*" element= {<Nopage/>} />    
           <Route path="/" element= {<Index/>} />
-          <Route path="/contact" element= {<Contact/>} />
-          <Route path="/about" element= {<About/>} />
-          <Route path="/Gallery" element= {<Gallery/>} />
-          <Route path="/news" element= {<News/>} />
           <Route path="/signup" element= {<Signup/>} />
           <Route path="/login" element= {<Login change={change} setChange={setChange}/> } />
           <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard loading={Loading} setLoading={setLoading}/></Suspense>} />
-          <Route path="/blogs" element= {<Suspense fallback={<Loading></Loading>}><PersonalBlogs/></Suspense>} />
-          <Route path="/addproducts" element={<AddProducts/>}/>
+            <Route path="/addproducts" element={<AddProducts/>}/>
           <Route path="/products" element={<Products/>}/>
 
 

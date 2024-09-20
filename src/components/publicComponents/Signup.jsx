@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, { useState } from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "../styles/signup.scss"
 import {Link} from "react-router-dom"
-import api from '../utils/AxiosInstance';
+import api from "../../utils/AxiosInstance"
 const Signup = () => {
     const [username, setUsername]=useState("")
     const [email, setEmail]=useState("")

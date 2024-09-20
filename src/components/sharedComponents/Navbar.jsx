@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navbar.scss";
 import {Link, useNavigate} from "react-router-dom"
-import logo from "../images/logo.png"
+import logo from "../../images/logo.png"
 import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { AiOutlineHome } from "react-icons/ai";
 import { LiaFemaleSolid, LiaMaleSolid } from "react-icons/lia";
-import { PiGridFour } from "react-icons/pi";
-import api from "../utils/AxiosInstance";
+import { CiLogout } from "react-icons/ci";
+
 import Cookies from "js-cookie";
+import api from "../../utils/AxiosInstance";
 
 const Navbar = (props) => {
 const [menuData, setMenuData]=useState(false);
@@ -76,7 +77,7 @@ useEffect(()=>{
               <li>
                 <Link to="/about"> Women</Link>
               </li>
-    
+            
             </ul>
           </div>
         
@@ -108,8 +109,7 @@ useEffect(()=>{
       
           
       </div>:<div className="reg">
-        <button className="signup"><Link to="/signup"> Sign Up</Link></button>
-          
+
         <button className="login"><Link to="/login"> Login</Link></button>
         
       </div>}
@@ -131,7 +131,7 @@ useEffect(()=>{
   <li>Edit Profile</li>
   <hr />
   <li>Settings</li>
-  <li onClick={handleLogout}>Log-Out</li>
+  <li onClick={handleLogout}><CiLogout /> Log-Out</li>
  </ul>
 
 </div>  

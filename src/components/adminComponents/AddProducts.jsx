@@ -99,12 +99,15 @@ const AddProducts = () => {
           }}
           required
         />
-        <label htmlFor="size">For (Gender Specific) :</label>
-       <select name="gender" id="" value={gender} onChange={(e)=>setGender(e.target.value)}>
-        <option value="">Select</option>
-        <option value="">Men</option>
-        <option value="">Women</option>
-       </select>
+       <label htmlFor="gender">Gender:</label>
+        <input
+          id="gender"
+          name="gender"
+          value={gender}
+          onChange={(e)=>{setGender(e.target.value)}}
+          required
+        />
+
        <label htmlFor="catagory">Catagory:</label>
         <input
           id="catagory"
