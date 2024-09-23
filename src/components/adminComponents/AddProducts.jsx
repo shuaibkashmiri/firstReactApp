@@ -3,9 +3,11 @@ import Authorized from '../../auth/Authorized'
 import './AddProducts.scss';
 import api from '../../utils/AxiosInstance';
 import { toast, ToastContainer } from 'react-toastify';
+import AdminChecK from '../../auth/AdminChecK';
 
 const AddProducts = () => {
   Authorized()
+  AdminChecK()
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [price, setPrice] = useState("")
