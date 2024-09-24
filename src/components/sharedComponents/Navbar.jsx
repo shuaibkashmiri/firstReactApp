@@ -22,6 +22,7 @@ const navigate = useNavigate()
 
 
 const handleLogout=()=>{
+  
   setShowSettings(false);
   setDropDown(false)
   Cookies.remove("token")
