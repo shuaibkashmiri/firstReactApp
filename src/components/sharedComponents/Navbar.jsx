@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom"
 import logo from "../../images/logo.png"
 import { IoMdMenu  } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaCartArrowDown } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { AiOutlineHome } from "react-icons/ai";
@@ -101,14 +102,13 @@ useEffect(()=>{
 
       <div>
         {user?<div  className="userlogo">
-      <div className="userprofile">
-        <img src="" alt="img" />
-      </div>
+      <div className="user">
       <p>{user}</p>
 
        <IoIosArrowDropdown onClick={toggleDropDown}/>
+      </div>
+      <div> <FaCartArrowDown className="cart" /></div>
       
-          
       </div>:<div className="reg">
 
         <button className="login"><Link to="/login"> Login</Link></button>

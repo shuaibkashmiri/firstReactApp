@@ -12,7 +12,7 @@ const AddProducts = () => {
   const [image, setImage] = useState(null);
   const [price, setPrice] = useState("")
   const [description,setDescription]=useState("");
-  const [gender,setGender]=useState("")
+  const [subCatagory,setSubCatagory]=useState("")
   const [catagory,setCatagory]=useState("")
   const [size,setSize]=useState("")
 
@@ -21,7 +21,7 @@ const AddProducts = () => {
   formData.append("title", title);
   formData.append("image", image);
   formData.append("price", price);
-  formData.append("gender", gender);
+  formData.append("subCatagory", subCatagory);
   formData.append("catagory", catagory);
   formData.append("size", size);
   formData.append("description",description)
@@ -92,7 +92,7 @@ const AddProducts = () => {
         />
         <label htmlFor="size">Size:</label>
         <input
-          type="number"
+          type="text"
           id="size"
           name="size"
           value={size}
@@ -101,14 +101,7 @@ const AddProducts = () => {
           }}
           required
         />
-       <label htmlFor="gender">Gender:</label>
-        <input
-          id="gender"
-          name="gender"
-          value={gender}
-          onChange={(e)=>{setGender(e.target.value)}}
-          required
-        />
+       
 
        <label htmlFor="catagory">Catagory:</label>
         <input
@@ -116,6 +109,15 @@ const AddProducts = () => {
           name="catagory"
           value={catagory}
           onChange={(e)=>{setCatagory(e.target.value)}}
+          required
+        />
+
+<label htmlFor="gender">Sub Catagory:</label>
+        <input
+          id="subCatagory"
+          name="subCatagory"
+          value={subCatagory}
+          onChange={(e)=>{setSubCatagory(e.target.value)}}
           required
         />
 

@@ -42,9 +42,9 @@ const Products = () => {
    <img src={products.imageUrl} alt="" />
    </div>
    <div className='product-info'>
-    <p>{products.title}</p>
-    <p>{products.catagory}</p>
-    <p>{products.gender}</p>
+    <p className='title'>{products.title}</p>
+    <p className='catagory'>{products.catagory}</p>
+    <p className='size'>Available Sizes {products.size}</p>
     <p className='price'>₹ {products.price}</p>
 
     <button>Add To Cart</button>

@@ -245,7 +245,10 @@
   }
 
   @media only screen and (min-width : 1000px){
-
+.cart{
+  font-size: 30px;
+  cursor: pointer;
+}
     .login-menu{
       background-color: white;
       padding: 5px 10px;
@@ -275,15 +278,20 @@
     .userlogo{
       display: flex;
       width: 300px;
-      justify-content:center;
+      justify-content:space-between;
       align-items: center;
       font-size: 18px;
-      margin-right: 150px;
-      margin-top: 20px;
+      margin-right: 50px;
+      margin-top: 40px;
       gap: 5px;
       position: relative;
       overflow: hidden;
-  
+  >.user{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+  }
+
     }
 
 
@@ -309,17 +317,6 @@
       }
       
     }
-
-    
-
-    .userprofile{
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-
-  
 
 
     .reg{

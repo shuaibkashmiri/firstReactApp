@@ -1,6 +1,12 @@
+*{
+  font-size: 18px;
+}
+
 h1{
   margin-top: 20px;
   text-align: center;
+  font-size: 35px;
+  color: #31473A;
 }
 
 .main{
@@ -26,9 +32,9 @@ h1{
   margin: 10px auto;
   >.image{
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     height: 70%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     object-fit: contain;
     >img{
       width: 100%;
@@ -39,7 +45,7 @@ h1{
 
 .product-info{
   >p{
-    font-size: 18px;
+    
     overflow: hidden;
   }
   >button{
@@ -55,5 +61,17 @@ h1{
 
 .price{
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: 10px;
+  font-size: 22px ;
+}
+
+.catagory{
+  margin-top: 10px;
+  color: #31473A;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.title{
+  font-weight: 800;
 }
