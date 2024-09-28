@@ -86,20 +86,19 @@
 
 
 @media only screen and (max-width : 620px){
-  .userlogo{
-    display: none;
-  }
+ 
 .menu{
   display: block;
   width: 13%;
   height: 80%;
   margin-left: -1%;
 }
-.login-menu{
+.login-mobile{
   background-color: white;
   padding: 5px 10px;
   position: relative;
   top: 20%;
+  margin-right: 3%;
   border-radius: 10px;
   text-decoration: none;
   color: #31473A;
@@ -140,12 +139,12 @@
 
 .navbar{
   width: 100%;
- background-size: 300%;
-
  display: flex;
- justify-content: space-around;
+ justify-content: space-evenly;
+ padding-right:10%;
 
-  padding: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   z-index: 2;
   >ul{
     display: none;
@@ -156,19 +155,28 @@
     display: none;
   }
 
+
+}
+.user{display: none;}
+.cart{
+  margin-right:0% ;
+  margin-top: 60%;
+  font-size: 24px;
 }
 
 .logo{
-  height: 100px;
+  height: 80px;
+  width: 80%;
 }
 
 .dots{
   margin-top: 20px;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .settings{
-  width: 35%;
+  width: 45%; 
   position: relative;
   top: 170px;
   left: 53%;
@@ -191,6 +199,7 @@
     height: 100%;
     >li{
       cursor: pointer;
+      list-style: none;
      }
   }
   
@@ -213,7 +222,8 @@
     padding: 5px 10px;
     position: relative;
 
-    right: 4%;
+    right: 20%;
+  
     border-radius: 10px;
     text-decoration: none;
     color: #31473A;
@@ -236,9 +246,6 @@
     >.reg{
       display: none;
     }
-.logo{
-  width: 100%;
-}
 
   }
 
@@ -254,6 +261,7 @@
       padding: 5px 10px;
       position: relative;   
       right: 4%;
+      top: 40%;
       border-radius: 10px;
       text-decoration: none;
       color: #31473A;

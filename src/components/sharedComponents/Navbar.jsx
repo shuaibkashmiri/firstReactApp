@@ -74,7 +74,7 @@ useEffect(()=>{
                 <Link to="/"> Home</Link>
               </li>
               <li>
-                <Link to="/contact"> Men</Link>
+                <Link to="/men"> Men</Link>
               </li>
               <li>
                 <Link to="/about"> Women</Link>
@@ -92,7 +92,7 @@ useEffect(()=>{
           <Link to="/"> <AiOutlineHome/> Home</Link>
         </li>
         <li>
-          <Link to="/contact"><LiaMaleSolid/> Men</Link>
+          <Link to="/men"><LiaMaleSolid/> Men</Link>
         </li>
         <li>
           <Link to="/blogs"><LiaFemaleSolid /> Women</Link>
@@ -121,7 +121,7 @@ useEffect(()=>{
       {/* buttons */}
       
       <div>
-{user ? <BsThreeDotsVertical className="dots" onClick={toggleSetting}/>:<Link  to={"/login"} className="login-menu">Login</Link>}
+{user ? <BsThreeDotsVertical className="dots" onClick={toggleSetting}/>:<Link  to={"/login"} className="login-mobile">Login</Link>}
 
 </div>
       

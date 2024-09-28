@@ -14,7 +14,7 @@ import Signup from "./components/publicComponents/Signup.jsx";
 const Dashboard =lazy(()=>delay(import("./components/userComponents/Dashboard.jsx")))
 const Nopage=lazy(()=>import("./components/adminComponents/Nopage.jsx"))
 const AddProducts =lazy(()=>import("./components/adminComponents/AddProducts.jsx"))
-
+const Men =lazy(()=>import("./components/publicComponents/Men.jsx"))
 
 async function delay(promise){
   await new Promise((resolve)=>{
@@ -41,6 +41,8 @@ const App = () => {
           <Route path="/dashboard" element= {<Suspense fallback={<Loading></Loading>}><Dashboard loading={Loading} setLoading={setLoading}/></Suspense>} />
             <Route path="/addproducts" element={<AddProducts/>}/>
           <Route path="/products" element={<Products/>}/>
+          <Route path="/men" element={<Suspense fallback={<Loading></Loading>}><Men/></Suspense>}/>
+
 
 
 
