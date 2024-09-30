@@ -77,7 +77,7 @@ useEffect(()=>{
                 <Link to="/men"> Men</Link>
               </li>
               <li>
-                <Link to="/about"> Women</Link>
+                <Link to="/women"> Women</Link>
               </li>
             
             </ul>
@@ -95,7 +95,7 @@ useEffect(()=>{
           <Link to="/men"><LiaMaleSolid/> Men</Link>
         </li>
         <li>
-          <Link to="/blogs"><LiaFemaleSolid /> Women</Link>
+          <Link to="/women"><LiaFemaleSolid /> Women</Link>
         </li>
         
       </ul>

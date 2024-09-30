@@ -7,6 +7,7 @@ import Products from "./components/publicComponents/Products.jsx";
 import Loading from "./components/sharedComponents/Loading.jsx";
 import Login from "./components/publicComponents/Login.jsx";
 import Signup from "./components/publicComponents/Signup.jsx";
+import Women from "./components/publicComponents/Women.jsx";
 
 
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/addproducts" element={<AddProducts/>}/>
           <Route path="/products" element={<Products/>}/>
           <Route path="/men" element={<Suspense fallback={<Loading></Loading>}><Men/></Suspense>}/>
+          <Route path="/women" element={<Suspense fallback={<Loading></Loading>}><Women/></Suspense>}/>
 
 
 
