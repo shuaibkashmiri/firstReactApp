@@ -37,7 +37,7 @@ const Products = () => {
     <>
     <h1>New Arrivals!</h1>
 <div className="main">
-{products&&products.map((products)=><div className='product'>
+{products&&products.slice(-3).map((products)=><div className='product'>
    <div className='image'>
    <img src={products.imageUrl} alt="" />
    </div>
