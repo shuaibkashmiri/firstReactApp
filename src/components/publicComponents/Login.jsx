@@ -19,7 +19,7 @@ const Login = (props) => {
         if(res.data.message==="user loggin success"){
             toast.success("Logged In Successfully");
             props.setChange(!props.change)
-            navigate("/dashboard")
+            navigate("/")
         }else{
             toast.error(res.data.message)
         }

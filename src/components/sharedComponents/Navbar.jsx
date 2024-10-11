@@ -19,6 +19,8 @@ const [menuData, setMenuData]=useState(false);
 const [showSetting,setShowSettings]=useState(false);
 const [dropDown, setDropDown]=useState(false)
 const [user,setUser]=useState("")
+const [cart, setCart]=useState("")
+const [loading,setLoading]=useState(false);
 const navigate = useNavigate()
 
 
@@ -49,6 +51,8 @@ const getUserData=async()=>{
   try {
     const res =await api.get("/user/userdetails");
     setUser(res.data.message.userdetails.email)
+    setCart(res.data.message.userdetails.cart.length)
+    setLoading(!loading)
   } catch (error) {
     console.log(error);
   }
@@ -58,7 +62,7 @@ useEffect(()=>{
     getUserData()
   
    
-},[props.change])
+},[props.change,loading])
 
 
   return (
@@ -107,7 +111,7 @@ useEffect(()=>{
 
        <IoIosArrowDropdown onClick={toggleDropDown}/>
       </div>
-      <div> <FaCartArrowDown className="cart" /></div>
+      <div className="cart-length"> <Link to="/usercart"><FaCartArrowDown className="cart" /></Link><p>{cart}</p></div>
       
       </div>:<div className="reg">
 

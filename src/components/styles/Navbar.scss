@@ -157,11 +157,16 @@
 
 
 }
+.cart-length{
+  display: flex;
+  
+}
 .user{display: none;}
 .cart{
   margin-right:0% ;
   margin-top: 60%;
   font-size: 24px;
+
 }
 
 .logo{
@@ -252,6 +257,17 @@
   }
 
   @media only screen and (min-width : 1000px){
+    .cart-length{
+      display: flex;
+      >p{
+        color: red;
+        font-size: 20px;
+        font-weight: 800;
+      }
+      >a{
+        color: #EDF4F2;
+      }
+    }
 .cart{
   font-size: 30px;
   cursor: pointer;

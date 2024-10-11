@@ -14,6 +14,7 @@ const getMenCatagory=async ()=>{
   }
 }
 
+
 useEffect(()=>{
   getMenCatagory()
 },[])

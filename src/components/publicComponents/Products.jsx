@@ -29,6 +29,14 @@ const Products = () => {
     }
   };
 
+  const addtoCart=async(productID)=>{
+    
+    try {
+      const res=await api.post(`/products/addtocart/${productID}`)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   useEffect(() => {
         
     fetchProducts()
@@ -47,7 +55,7 @@ const Products = () => {
     <p className='size'>Available Sizes {products.size}</p>
     <p className='price'>₹ {products.price}</p>
 
-    <button>Add To Cart</button>
+    <button onClick={()=>{addtoCart(products._id)}}>Add To Cart</button>
    </div>
 </div>)}
 </div>

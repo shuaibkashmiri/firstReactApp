@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Authorized from '../../auth/Authorized'
 import "../styles/dashboard.scss"
 import api from '../../utils/AxiosInstance'
+import AdminChecK from '../../auth/AdminChecK'
 
 
 const Dashboard = (props) => {
   
   Authorized()
+  AdminChecK()
+
   
   
   const [name ,setName]=useState("")
