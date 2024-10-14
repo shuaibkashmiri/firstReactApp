@@ -18,10 +18,11 @@ const Signup = () => {
             email,
             password,
           });
-          if(res.data.msg === "User Registered Sucessfully"){
-            toast.success(res.data.msg);
+          if(res.data.message === "User Registered Sucessfully"){
+            console.log(res.data)
+            toast.success(res.data.message);
           }else{
-            toast.error(res.data.msg)
+            toast.error(res.data.message)
           }
           
         } catch (error) {

@@ -9,8 +9,8 @@ const Cart = () => {
     const cartItems=async()=>{
         try {
             const res=await api.get("/products/getcart")
-            setProducts(res.data.cart)
-            console.log(products)
+            setProducts(res.data.getUser.cart)
+            console.log(res.data)
         } catch (error) {
             console.log(error)
         }

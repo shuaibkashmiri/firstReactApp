@@ -24,12 +24,6 @@
     justify-content: space-around;
     margin-bottom: 20px;
     padding-right: 10px;
-    
-   
-  
-
-    
-
 
   }
   
@@ -85,23 +79,26 @@
 
 
 
+
 @media only screen and (max-width : 620px){
  
 .menu{
   display: block;
-  width: 13%;
+  width: 10%;
   height: 80%;
-  margin-left: -1%;
+  margin-left: 2%;
+  margin-top: 2%;
 }
 .login-mobile{
   background-color: white;
-  padding: 5px 10px;
+  padding: 3px 7px;
   position: relative;
-  top: 20%;
-  margin-right: 3%;
+  top: 30%;
+  right: 35%;
   border-radius: 10px;
   text-decoration: none;
   color: #31473A;
+  font-size: 16px;
 }
 
 
@@ -253,6 +250,9 @@
     }
 
   }
+  .login{
+  
+  }
 
   }
 
@@ -352,7 +352,12 @@
       gap:20px;
       margin-right: 50px;
     }
+
+   
   }
+
+
+ 
 
   @media only screen and (min-width : 621px){
     .navbar{

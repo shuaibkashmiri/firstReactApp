@@ -31,6 +31,7 @@ const handleLogout=()=>{
   Cookies.remove("token")
   setUser("");
   navigate("/")
+  setLoading(!loading)
 
 
 }
@@ -58,11 +59,8 @@ const getUserData=async()=>{
   }
 }
 useEffect(()=>{
-
-    getUserData()
-  
-   
-},[props.change,loading])
+getUserData()
+  },[props.change,loading])
 
 
   return (
@@ -115,7 +113,7 @@ useEffect(()=>{
       
       </div>:<div className="reg">
 
-        <button className="login"><Link to="/login"> Login</Link></button>
+        <Link to="/login" className="login"> Login</Link>
         
       </div>}
       </div>
