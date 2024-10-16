@@ -5,7 +5,7 @@ import api from '../../utils/AxiosInstance';
 
 const Products = () => {
 
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
